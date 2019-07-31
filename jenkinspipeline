@@ -1,0 +1,10 @@
+node{
+stage('SCM checkout'){
+git 'https://github.com/nagasatishgit/maven_javaproj.git'
+}
+stage('compile-package'){
+def mvnHOME = tool name: 'maven3', type: 'maven'
+sh "${mvnHOME}bin/mvn package"
+}
+ 
+ }
